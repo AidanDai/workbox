@@ -111,7 +111,7 @@ class InjectManifest {
       compilation, path.join(this.config.importsDirectory, manifestFilename));
     compilation.assets[pathToManifestFile] = manifestAsset;
 
-    importScriptsArray.push((compilation.options.output.publicPath || '') +
+    importScriptsArray.unshift((compilation.options.output.publicPath || '') +
       pathToManifestFile.split(path.sep).join('/'));
 
     // workboxSWImports might be null if importWorkboxFrom is 'disabled'.
